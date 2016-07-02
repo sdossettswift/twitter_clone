@@ -1,9 +1,13 @@
 class PostController < ApplicationController
   def create
     @post = Post.new
-    @post.save
-    redirect_to root_path, notice: "Gossip whispered!"
-  end
+    @post.message = params[:post][:message]
+    if @post.save
+     redirect_to root_path, notice: "Gauzip Whispered!"
+    else
+     render :edit
+   end
+ end
 
   def new
     @post = Post.new

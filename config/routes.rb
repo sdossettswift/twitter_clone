@@ -13,5 +13,19 @@ Rails.application.routes.draw do
    patch 'post/:id' => 'post#update', as: :update_post
    delete 'post/:id' => 'post#delete', as: :delete_post
 
-   get 'post/:id/detail' =>'post#show', as: :show_post
+  get 'post/:id/detail' =>'post#show', as: :show_post
+
+
+  get 'sign_in' => 'sessions#new', as: :sign_in
+  post 'sign_in' => 'sessions#create'
+  delete 'sign_in' => 'sessions#delete'
+
+  get 'register' => 'user#new', as: :new_user
+  post 'register' => 'user#create', as: :create_user
+
+  get 'users' => 'user#index', as: :users
+  get 'entourage' => 'user#following', as: :following
+  post 'follow/:user_id' => 'user#follow', as: :follow
+  post 'unfollow/:user_id' => 'user#unfollow', as: :unfollow
+
 end
