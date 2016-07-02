@@ -1,0 +1,31 @@
+@import 'bootstrap';
+@import 'bootstrap-sprockets';
+
+$pink: #F47DB6;
+*{
+  font-family: 'Avenir', sans-serif;
+
+}
+
+.li{
+  list-style: none;
+  display: inline;
+}
+
+.header_bar{
+  background-color:#F47DB6;
+  text-decoration: none;
+  color: white;
+  margin: 0;
+  padding: 0;
+
+  h1{
+    font-size: 48px;
+  }
+
+.header_links{
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+}
+}

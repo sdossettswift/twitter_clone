@@ -7,11 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
+  <div class="header_bar">
     <h1>Gauzip <small>hot goss</small></h1>
+
+    <div class="header_links">
+        <%=link_to 'Share Gossip', new_post_path%>
+        <%=link_to 'Get Gosspip', root_path%>
+      </div>
+
   </div>
-  
-  <div class="container">
+
     <%= yield %>
   </div>
 </body>

@@ -1,6 +1,8 @@
 class PostController < ApplicationController
   def create
     @post = Post.new
+    @post.save
+    redirect_to root_path, notice: "Gossip whispered!"
   end
 
   def new

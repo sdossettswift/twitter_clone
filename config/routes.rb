@@ -8,10 +8,10 @@ Rails.application.routes.draw do
 
    # update a post
    # show the form
-   get 'post/:id/edit' => 'post#edit', as: :edit_path
+   get 'post/:id/edit' => 'post#edit', as: :edit_post
    # patch the form
-   patch 'post/:id' => 'post#update', as: :update_path
-   delete 'post/:id' => 'post#delete', as: :delete_path
+   patch 'post/:id' => 'post#update', as: :update_post
+   delete 'post/:id' => 'post#delete', as: :delete_post
 
-   get 'post/:id/detail' =>'post#show', as: :show_post_path
+   get 'post/:id/detail' =>'post#show', as: :show_post
 end
