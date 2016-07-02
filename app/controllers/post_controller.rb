@@ -31,7 +31,7 @@ class PostController < ApplicationController
     @post = Post.all
   end
 
-  def show
+  def detail
     @post = Post.find_by id: params[:id]
   end
 end

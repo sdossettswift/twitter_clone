@@ -1,5 +1,7 @@
-<%@post.each do |post|%>
-  <div class="message">
-    <%=post.message%>
-  </div>
-<%end%>
+<div class="list-group">
+  <% @post.each do |post| %>
+    <div class="list-group-item">
+      <%= link_to post.message, post_path(id: post.id) %>
+  <% end %>
+
+</div>
