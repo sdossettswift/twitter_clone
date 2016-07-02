@@ -12,4 +12,6 @@ Rails.application.routes.draw do
    # patch the form
    patch 'post/:id' => 'post#update', as: :update_path
    delete 'post/:id' => 'post#delete', as: :delete_path
+
+   get 'post/:id/detail' =>'post#show', as: :show_post_path
 end
