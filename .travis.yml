@@ -1,8 +1,15 @@
 language: ruby
 rvm:
-  - 2.3.1
+- 2.3.1
 addons:
-  postgresql: "9.4"
+  postgresql: '9.4'
 before_script:
-  - psql -c 'create database travis_ci_test;' -U postgres
-  - cp config/database.yml.travis config/database.yml
+- psql -c 'create database travis_ci_test;' -U postgres
+- cp config/database.yml.travis config/database.yml
+deploy:
+  provider: heroku
+  api_key:
+    secure: aOp64ZjP7c2J8Zvih+mlpGI3UkzvIr8KJcSOuL56U8c65VCJFx0oJaiRdUSc+bJfHqhrWb9aQ4PsKZk41mEetN9NQ3UGdmPuLMRqZ4UORlWBE9S94jpQhtHXQ3+7aC8u/piUo6/BsFL4aOHkbDdyyboj/3xHDtdkhQjULb28zvRlgvW4BvQgtCqmfWss46gpBn5CwouFUOaLL2od31eiHq+JC+di/UB5jxcpF7QvxTuuKmABtSTso4C+uvoDNZTF+nNQlGKzIa9gKf/4xyB1pnOCC33/AsNj8tz9TZmOMzmWk/R52exImGH/NYk4qYjMszPPavcJH2JJBoM0fSzzu0x8nfMQGMebQCSEWyuI6I2x7mXnccxfLfO8OGViO0vPC1v/HEGdq8Ez9vBoblwDNthQK2AYsf/Ah5AVNpKP0DWvnO/yAg8q+m+6PdPfrO8dxUNVa/QpOk7lH1HcJ+gboCysfSAGv9g+DnFhv0xbBhJ6t1yHIjw4cYMQgrZ2qLnCEa+Wd8cCwaBd+Q0H9l+6j4YWR4eieDW2L+bKHLl0M+Or1Au0JXykEETJznIda1A+QwtAcMT6HqWS7Bxs87376z289plONFF/j4Ie+gkBlTtL/ZKZvVPNZhnrO5fuW2ZU25aN7SXHlCyxzFp9QvhJ49uZL3OHvd9yWFy1OlxtreM=
+  app: gauzip
+  on:
+    repo: sdossettswift/twitter_clone
