@@ -14,6 +14,7 @@ gem 'bcrypt'
 gem "acts_as_follower"
 gem 'minitest-rails'
 gem 'simple_form'
+gem 'puma'
 
 group :development, :test do
   gem 'sqlite3'
