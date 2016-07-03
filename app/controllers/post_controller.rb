@@ -1,4 +1,6 @@
 class PostController < ApplicationController
+  before_action :authenticate_user!
+
   def create
     @post = Post.new
     @post.message = params[:post][:message]

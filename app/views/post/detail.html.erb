@@ -1,5 +1,16 @@
-<div class="container">
-  <%=@post.message%>
+<div class="gossip_detail">
+    <div class ="quote_marks">
+      <p>"</p>
+          </div>
+  <div class="gossip_message">
+
+      <%=@post.message%>
+        </div>
+      <div class ="quote_marks">
+        <p>"</p>
+            </div>
+
+
 
   <%= link_to 'Edit', edit_post_path%>
   <%= link_to 'Delete', delete_post_path, :method => :delete%>

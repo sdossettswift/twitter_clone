@@ -12,6 +12,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt'
 gem "acts_as_follower"
+gem 'minitest-rails'
+gem 'simple_form'
 
 group :development, :test do
   gem 'sqlite3'
@@ -29,8 +31,6 @@ group :development do
 
   gem 'spring'
 end
-
-gem "minitest-rails"
 
 group :test do
   gem "minitest-rails-capybara"

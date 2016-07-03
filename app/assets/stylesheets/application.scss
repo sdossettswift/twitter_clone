@@ -1,5 +1,9 @@
 @import 'bootstrap';
 @import 'bootstrap-sprockets';
+@import 'post';
+@import 'user';
+@import 'https://fonts.googleapis.com/css?family=Coustard';
+
 
 $pink: #F47DB6;
 *{
@@ -12,20 +16,62 @@ $pink: #F47DB6;
   display: inline;
 }
 
+.header_links{
+  background-color:#F47DB6;
+  text-decoration: none;
+  color: white;
+  margin: 5px;
+  text-align: right;
+  a{
+    color: white;
+  }
+}
 .header_bar{
   background-color:#F47DB6;
   text-decoration: none;
   color: white;
   margin: 0;
-  padding: 0;
-
+  padding: 10px 20px;
   h1{
     font-size: 48px;
   }
 
 .header_links{
   color: white;
-  padding: 10px;
+  padding: -40px 10px;
   font-size: 18px;
+
 }
+}
+
+.gossip_message {
+    font-size: 48px;
+    text-align: center;
+    color: $pink;
+    margin: 0;
+    padding: 0;
+    line-height: auto;
+
+  }
+
+.quote_marks {
+  font-size: 48px;
+  text-align: center;
+  font-family: serif;
+  color: $pink;
+  margin: 0;
+  padding: 0;
+  font-family: 'Coustard', serif;
+  content: open-quote;
+  // line-height: 0;
+}
+
+q {
+  quotes: "“" "”" "‘" "’";
+}
+q:before {
+    content: open-quote;
+}
+q:after {
+    content: close-quote;
 }
