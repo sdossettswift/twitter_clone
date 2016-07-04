@@ -1,17 +1,17 @@
 class UserController < ApplicationController
 
-    # def index
-    #   @users = User.where("id != ?", @current_user.id)
-    # end
+    def index
+      @users = User.where("id != ?", @current_user.id)
+    end
 
     def new
       @user = User.new
     end
 
     def create
-      @user = User.new params.require(:user).permit(:email, :password, :password_confirmation)
+      @user = User.new params.require(:user).permit(:username, :email, :password, :password_confirmation)
       if @user.save
-        session [:user_id] = user.id
+        session[:user_id] = @user.id
         redirect_to root_path, notice: "Welcome to the clique!"
       else
         render :new

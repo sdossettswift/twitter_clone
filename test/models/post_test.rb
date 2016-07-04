@@ -2,7 +2,6 @@ require 'test_helper'
 
 class PostTest < ActiveSupport::TestCase
 
-
     test "post should post" do
 
       @post = Post.new

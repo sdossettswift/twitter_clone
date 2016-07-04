@@ -9,14 +9,21 @@
 </head>
 <body>
 
+  <div class="header_bar" class=".col-xs-12 .col-sm-6 .col-lg-8">
 
-  <div class="header_bar">
-    <h1>Gauzip</h1>
+    <h1><%=link_to 'Gauzip', root_path%><i class="fa fa-bullhorn" aria-hidden="true"></i>
+</h1>
   </div>
-  <div class="header_bar">
+  <div class="header_bar" class=".col-xs-6 .col-lg-4">
     <div class="header_links">
-        <%=link_to 'Share Gossip', new_post_path%> ||
-        <%=link_to 'Get Gossip', root_path%>
+      <%if @current_user!=nil%>
+      <%=link_to 'Share Gossip', new_post_path%> ||
+      <%=link_to 'Get Gossip', root_path%> ||
+      <%=link_to 'Sign Out', sign_out_path%>
+        <%else%>
+        <%=link_to 'Sign In', sign_in_path%> ||
+        <%=link_to 'Sign Up', new_user_path%>
+    <%end%>
     </div>
     </div>
 
@@ -37,5 +44,14 @@
 </div>
 
 
+<div class="footer">
+
+  <i class="fa fa-copyright" aria-hidden="true"></i> 2016 <br/>
+  S. D O S S E T T  S W I F T<br/>
+
+<i class="fa fa-code" aria-hidden="true"></i> fueled by <i class="fa fa-heart" aria-hidden="true"></i>, <i class="fa fa-coffee" aria-hidden="true"></i>
+, and <a href="https://github.com/sdossettswift/twitter_clone"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+</div>
 </body>
 </html>

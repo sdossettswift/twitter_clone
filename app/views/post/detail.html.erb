@@ -1,13 +1,18 @@
 <div class="gossip_detail">
-    <div class ="quote_marks">
-      <p>"</p>
+
+  <div class="so_and_so_says">
+    <%=@post.id%> Says:
+  </div>
+    <div class ="top_quote_marks">
+      <i class="fa fa-quote-left" aria-hidden="true"></i>
+
           </div>
   <div class="gossip_message">
 
       <%=@post.message%>
         </div>
-      <div class ="quote_marks">
-        <p>"</p>
+      <div class ="bottom_quote_marks">
+        <i class="fa fa-quote-right" aria-hidden="true"></i>
             </div>
 
 

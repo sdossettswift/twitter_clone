@@ -19,7 +19,7 @@ class PostController < ApplicationController
     @post = Post.find_by id: params[:id]
     @post.message = params[:post][:message]
     if @post.save
-     redirect_to root_path, notice: "Post Updated!"
+     redirect_to root_path, notice: "Gauip Updated!"
     else
      render :edit
     end
@@ -32,7 +32,7 @@ class PostController < ApplicationController
   def delete
       @post = Post.find_by id: params[:id]
       @post.destroy
-      redirect_to root_path, notice: "History altered!"
+      redirect_to root_path, notice: "Gauzip deleted. History altered!"
   end
 
   def index

@@ -15,6 +15,7 @@ gem "acts_as_follower"
 gem 'minitest-rails'
 gem 'simple_form'
 gem 'puma'
+gem 'font-awesome-sass'
 
 group :development, :test do
   gem 'sqlite3'
