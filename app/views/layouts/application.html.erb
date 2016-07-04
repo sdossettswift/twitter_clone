@@ -8,24 +8,29 @@
   <link href="https://fonts.googleapis.com/css?family=Coustard" rel="stylesheet">
 </head>
 <body>
+  <div class="row">
+    <div class="col-xs-12, col-sm-6, col-lg-8">
+      <div class="header_bar">
+        <h1><%=link_to 'Gauzip', root_path%><i class="fa fa-bullhorn" aria-hidden="true"></i></h1>
+      </div>
+    </div>
+  <div class="col-xs-6, col-lg-4">
+    <div class="header_bar">
+      <div class="header_links">
+          <%if @current_user!=nil%>
+          <%=link_to 'Share Gossip', new_post_path%> ||
+          <%=link_to 'Get Gossip', root_path%> ||
+          <%=link_to 'Sign Out', sign_out_path%>
+            <%else%>
+            <%=link_to 'Sign In', sign_in_path%> ||
+            <%=link_to 'Sign Up', new_user_path%>
+            <%end%>
+          </div>
+        </div>
+      </div>
 
-  <div class="header_bar" class=".col-xs-12 .col-sm-6 .col-lg-8">
-
-    <h1><%=link_to 'Gauzip', root_path%><i class="fa fa-bullhorn" aria-hidden="true"></i>
-</h1>
   </div>
-  <div class="header_bar" class=".col-xs-6 .col-lg-4">
-    <div class="header_links">
-      <%if @current_user!=nil%>
-      <%=link_to 'Share Gossip', new_post_path%> ||
-      <%=link_to 'Get Gossip', root_path%> ||
-      <%=link_to 'Sign Out', sign_out_path%>
-        <%else%>
-        <%=link_to 'Sign In', sign_in_path%> ||
-        <%=link_to 'Sign Up', new_user_path%>
-    <%end%>
-    </div>
-    </div>
+
 
 <div class="container">
 
