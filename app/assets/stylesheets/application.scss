@@ -11,6 +11,7 @@ $pink: #F47DB6;
 }
 
 .so_and_so_says{
+  font-family: 'Parisienne', cursive;
   text-align: center;
   color: $pink;
   font-size: 14px;
@@ -24,7 +25,7 @@ $pink: #F47DB6;
   }
 }
 .yield-container{
-  height: 80vh;
+  height: 78vh;
 }
 .footer{
   height: 10vh;
@@ -104,7 +105,6 @@ $pink: #F47DB6;
   color: $pink;
   margin: 0;
   padding: 0;
-  font-family: 'Coustard', serif;
   content: open-quote;
   // line-height: 0;
 }
