@@ -4,6 +4,6 @@ class Users < ActiveRecord::Migration
       t.string :username
       t.string :password_digest
       t.string :email
+    end
   end
-end
 end

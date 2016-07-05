@@ -3,6 +3,6 @@ class Posts < ActiveRecord::Migration
     create_table :posts do |t|
       t.string :user
       t.text :message
+    end
   end
-end
 end
