@@ -6,4 +6,3 @@ class Users < ActiveRecord::Migration
       t.string :email
   end
 end
-end
