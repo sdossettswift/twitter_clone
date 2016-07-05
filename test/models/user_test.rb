@@ -6,9 +6,10 @@ class UserTest < ActiveSupport::TestCase
 
     @user = User.new
     @user.username = "Sarah"
-    @user.save
-    User.last.username =="Sarah"
-    assert_equal false, @user.errors[:post].any?, "Username is Sarah"
+    @user.password = "12345678"
+
+    assert_equal true, @user.save
+
 
 end
 
