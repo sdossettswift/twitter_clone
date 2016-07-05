@@ -9,13 +9,30 @@ $pink: #F47DB6;
 *{
   font-family: 'Avenir', sans-serif;
 }
+
+.so_and_so_says{
+  text-align: center;
+  color: $pink;
+  font-size: 14px;
+}
+.edit_links{
+  text-align: center;
+  color: $pink;
+  font-size: 14px;
+  a{
+    padding: 10px;
+  }
+}
 .yield-container{
   height: 80vh;
 }
 .footer{
   height: 10vh;
 }
-
+.page-header{
+  text-align: center;
+  color: $pink;
+}
 .li{
   list-style: none;
   display: inline;
@@ -38,7 +55,7 @@ $pink: #F47DB6;
   text-decoration: none;
   color: white;
   margin: 0;
-  height: 10vh; 
+  height: 10vh;
   padding: 10px 20px;
     h1{
       font-size: 48px;
