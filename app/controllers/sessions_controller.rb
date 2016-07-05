@@ -1,24 +1,25 @@
 class SessionsController < ApplicationController
-  def new
 
+  def new
   end
 
   def create
-    email = params[:email]
-    password = params[:password]
 
-    user = User.find_by email: email
-    if user && user.authenticate(password)
+    user = User.find_by username: params[:username]
+    if user && user.authenticate(params[:password])
+      # make session[:username] present
       session[:user_id] = user.id
-      redirect_to root_path
+      redirect_to root_path, notice: "Signed in!"
     else
-      flash.now[:alert] = "Bad credentials. Try again."
+      flash.now[:alert] = "Something is wrong with your username and/or password"
       render :new
     end
   end
 
   def delete
+    # we should sign out
+    # make future tests if we are signed in fail
     session.delete :user_id
-    redirect_to root_path
+    redirect_to root_path, notice: "Signed Out!"
   end
 end

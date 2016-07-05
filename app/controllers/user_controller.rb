@@ -1,5 +1,4 @@
 class UserController < ApplicationController
-
     def index
       @users = User.where("id != ?", @current_user.id)
     end
@@ -9,10 +8,14 @@ class UserController < ApplicationController
     end
 
     def create
-      @user = User.new params.require(:user).permit(:username, :email, :password, :password_confirmation)
+      @user = User.new
+      @user.username = params[:user][:username]
+      @user.password = params[:user][:password]
+      @user.password_confirmation = params[:user][:password_confirmation]
       if @user.save
+        # we should also sign them in
         session[:user_id] = @user.id
-        redirect_to root_path, notice: "Welcome to the clique!"
+        redirect_to root_path, notice: "Welcome to the cilque!"
       else
         render :new
       end

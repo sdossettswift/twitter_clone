@@ -19,7 +19,7 @@ class PostController < ApplicationController
     @post = Post.find_by id: params[:id]
     @post.message = params[:post][:message]
     if @post.save
-     redirect_to root_path, notice: "Gauip Updated!"
+     redirect_to root_path, notice: "Gauzip Updated!"
     else
      render :edit
     end
