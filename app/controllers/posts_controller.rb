@@ -1,18 +1,30 @@
-class PostController < ApplicationController
-  before_action :authenticate_user!
+class PostsController < ApplicationController
+  # before_action :authenticate_user!
+
+  before_action do
+    if @current_user.nil?
+      redirect_to sign_in_path, alert: "Please sign in."
+    end
+  end
+
+  def new
+    @post = Post.new
+  end
 
   def create
     @post = Post.new
     @post.message = params[:post][:message]
+    @post.user = @current_user
+
     if @post.save
      redirect_to root_path, notice: "Gauzip Whispered!"
     else
-     render :edit
+     render :new
    end
- end
+  end
 
-  def new
-    @post = Post.new
+  def edit
+     @post = Post.find_by id: params[:id]
   end
 
   def update
@@ -25,9 +37,6 @@ class PostController < ApplicationController
     end
   end
 
-  def edit
-      @post = Post.find_by id: params[:id]
-  end
 
   def delete
       @post = Post.find_by id: params[:id]
@@ -36,7 +45,7 @@ class PostController < ApplicationController
   end
 
   def index
-    @post = Post.all
+    @posts = Post.all
   end
 
   def detail

@@ -9,6 +9,12 @@ $pink: #F47DB6;
 *{
   font-family: 'Avenir', sans-serif;
 }
+.yield-container{
+  height: 80vh;
+}
+.footer{
+  height: 10vh;
+}
 
 .li{
   list-style: none;
@@ -32,6 +38,7 @@ $pink: #F47DB6;
   text-decoration: none;
   color: white;
   margin: 0;
+  height: 10vh; 
   padding: 10px 20px;
     h1{
       font-size: 48px;

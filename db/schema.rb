@@ -14,8 +14,8 @@
 ActiveRecord::Schema.define(version: 20160705135704) do
 
   create_table "posts", force: :cascade do |t|
-    t.string "user"
-    t.text   "message"
+    t.integer "user_id"
+    t.text    "message"
   end
 
   create_table "users", force: :cascade do |t|

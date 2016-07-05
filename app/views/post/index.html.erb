@@ -1,8 +1,0 @@
-<div class="list-group">
-<div class="list-group-item">
-  <% @post.each do |post| %>
-    <p>
-      <%= link_to post.message, post_path(id: post.id) %>
-    </p>
-  <% end %>
-</div>
