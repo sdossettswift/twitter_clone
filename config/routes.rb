@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get 'entourage' => 'users#following', as: :following
   post 'follow/:user_id' => 'users#follow', as: :follow
   post 'unfollow/:user_id' => 'users#unfollow', as: :unfollow
+  
 
   get 'posts' => 'posts#index'
 end

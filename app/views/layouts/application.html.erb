@@ -19,7 +19,9 @@
           <%if @current_user!=nil%>
           <%=link_to 'Share Gossip', new_post_path%> ||
           <%=link_to 'Get Gossip', root_path%> ||
-          <%=link_to 'Sign Out', sign_out_path%>
+          <%=link_to 'Sign Out', sign_out_path%>||
+          <%= link_to 'All Users', users_path %>||
+          <%= link_to 'Your Clique', following_path %>||
             <%else%>
             <%=link_to 'Sign In', sign_in_path%> ||
             <%=link_to 'Sign Up', new_user_path%>
