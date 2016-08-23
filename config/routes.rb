@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
    root 'posts#index' #root_path
+   get 'users/timeline' => 'users#timeline', as: :timeline
+
    get 'post/new' => 'posts#new', as: :new_post
 
    # create a post
@@ -8,12 +10,12 @@ Rails.application.routes.draw do
 
    # update a post
    # show the form
-   get 'post/:id/edit' => 'posts#edit', as: :edit_post
+   get 'posts/:id/edit' => 'posts#edit', as: :edit_post
    # patch the form
-   patch 'post/:id' => 'posts#update', as: :update_post
-   delete 'post/:id' => 'posts#delete', as: :delete_post
+   patch 'posts/:id' => 'posts#update', as: :update_post
+   delete 'posts/:id' => 'posts#delete', as: :delete_post
 
-  get 'post/:id/detail' =>'posts#show', as: :show_post
+  get 'posts/:id/detail' =>'posts#show', as: :show_post
 
 
   get 'sign_in' => 'sessions#new', as: :sign_in
@@ -24,11 +26,13 @@ Rails.application.routes.draw do
   get 'register' => 'users#new', as: :new_user
   post 'register' => 'users#create', as: :create_user
 
+  get 'users/:user_id' => 'users#profile', as: :profile
   get 'users' => 'users#index', as: :users
   get 'entourage' => 'users#following', as: :following
   post 'follow/:user_id' => 'users#follow', as: :follow
   post 'unfollow/:user_id' => 'users#unfollow', as: :unfollow
-  
+
+
 
   get 'posts' => 'posts#index'
 end

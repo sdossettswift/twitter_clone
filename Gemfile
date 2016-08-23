@@ -15,29 +15,26 @@ gem "acts_as_follower"
 gem 'minitest-rails'
 gem 'simple_form'
 gem 'puma'
+gem 'faker'
 gem 'font-awesome-sass'
+gem 'kaminari', '~> 0.16.3'
+gem 'kaminari-bootstrap'
 
 group :development, :test do
   gem 'sqlite3'
-end
-group :production do
-  gem 'pg'
+  gem 'byebug'
 end
 
-group :development, :test do
-  gem 'byebug'
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
-
   gem 'spring'
 end
 
 group :test do
   gem "minitest-rails-capybara"
-end
-
-group :production do
-  gem 'rails_12factor'
 end

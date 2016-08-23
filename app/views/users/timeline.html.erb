@@ -1,0 +1,24 @@
+<div class="container">
+        <% @posts.each do |post| %>
+
+              <% if post.user %>
+                <%= link_to user_path(name: post.user.username) do %>
+                  <%= post.user.username %>
+                <% end %>
+                <hr>
+              <% end %>
+
+              <%= post.message %>
+            <hr>
+
+
+                 <!-- <%= distance_of_time_in_words post.created_at, Time.now %> ago -->
+
+              <%= link_to post_path(id: post.id) do %>
+                <i class="fa fa-external-link-square"></i>
+              <% end %>
+
+
+        <% end %>
+
+</div>
